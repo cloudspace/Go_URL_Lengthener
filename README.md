@@ -10,11 +10,11 @@ Input must have 1 arguments:
 -
 Input:
 ```
-go run main.go -url="postgres://user:pass@host.com:5432/path?k=v&utf_blah=2&utm_holder=10&aaa=5#f"
+go run main.go http://t.co/xqc8YUzCMT
 ```
 Output (Success):
 ```
-{"result":"postgres://user:pass@host.com:5432/path?aaa=5\u0026k=v\u0026utf_blah=2#f"}
+{"result":"http://store.steampowered.com/search/?developer=Phoenix%20Online%20Studios"}
 ```
 -
 Output (Failure):
@@ -32,15 +32,15 @@ Requirements:
 3. boot2docker running
 
 ```
-go get https://github.com/cloudspace/Go-UTM-Stripper
-cd <Go-UTM-Stripper directory>/Go-UTM-Stripper
+go get github.com/cloudspace/Go_URL_Lengthener
+cd <Go_URL_Lengthener>/Go_URL_Lengthener
 docker run --rm -v $(pwd):/src centurylink/golang-builder
-docker build -t <username>/go-utm-stripper:0.1 ./
+docker build -t <username>/Go_URL_Lengthener:0.1 ./
 
 ```
 
 In order for `docker run --rm -v $(pwd):/src centurylink/golang-builder` to work you need to have the github url on the top line of main.go. It should look like this:
 ```
-package main // import "github.com/cloudspace/Go-UTM-Stripper"
+package main // import "github.com/cloudspace/Go_URL_Lengthener"
 ```
 You also must *push your code* to github *before building* the docker image.

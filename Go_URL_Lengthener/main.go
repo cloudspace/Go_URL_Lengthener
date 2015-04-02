@@ -1,4 +1,4 @@
-package main // import "github.com/cloudspace/Go-UTM-Stripper"
+package main // import "github.com/cloudspace/Go_URL_Lengthener"
 
 import (
 	"encoding/json"
