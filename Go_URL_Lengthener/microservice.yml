@@ -1,0 +1,25 @@
+microservice:
+  spec_version: '2.0'
+  name: 'Go_URL_Lengthener'
+  description: 'Lengthens a URL'
+  docker_image: 'izackp/go_url_lengthener'
+  docker_image_tag: '0.1'
+  repo_url: 'https://github.com/cloudspace/Go_URL_Lengthener'
+  docker_hub_url: 'https://registry.hub.docker.com/u/izackp/go_url_lengthener/'
+  category: 'URL'
+  tags: ['url', 'url lengthener', 'go', 'golang']
+  developer_name: 'isaac'
+  developer_type: 'User'
+  published: true
+  command: '/Go_URL_Lengthener [url]'
+  inputs:
+    url:
+      param_type: 'String'
+      regex: '^.*$'
+      required: true
+      secure: false
+      description: 'URL to lengthen'
+  outputs:
+    result:
+      param_type: 'String'
+      description: 'A Lengthened URL'
