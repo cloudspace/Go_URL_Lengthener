@@ -35,7 +35,7 @@ Requirements:
 go get github.com/cloudspace/Go_URL_Lengthener
 cd <Go_URL_Lengthener>/Go_URL_Lengthener
 docker run --rm -v $(pwd):/src centurylink/golang-builder
-docker build -t <username>/Go_URL_Lengthener:0.1 ./
+docker build -t <username>/go_url_lengthener:0.1 ./
 
 ```
 
