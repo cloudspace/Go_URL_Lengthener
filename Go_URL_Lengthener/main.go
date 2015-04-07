@@ -18,6 +18,7 @@ func main() {
 	resp, err := http.Get(urlToExtend)
 	if err != nil {
 		fmt.Println(getJSONError(err))
+		return
 	}
 
 	finalURL := resp.Request.URL.String()
