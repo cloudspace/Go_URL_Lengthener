@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+        "crypto/tls"
 )
 
 func main() {
@@ -14,8 +15,11 @@ func main() {
 	}
 
 	urlToExtend := os.Args[1]
-
-	resp, err := http.Get(urlToExtend)
+        tr := &http.Transport{
+          TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+        }
+        client := &http.Client{Transport: tr}
+	resp, err := client.Get(urlToExtend)
 	if err != nil {
 		fmt.Println(getJSONError(err))
 		return
